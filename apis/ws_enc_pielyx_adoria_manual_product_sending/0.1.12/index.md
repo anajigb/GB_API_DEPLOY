@@ -4,8 +4,8 @@ layout: "apiDefinition_1.1.0"
 api-definition:
   specVersion: "4.1.0"
   info:
-    name: "EnvoieCarte"
-    version: "4.1.0"
+    name: "WS_ENC_PIELYX_ADORIA_MANUAL_PRODUCT_SENDING"
+    version: "0.1.12"
     description: "An API for managing a list of tasks that need to be done"
     license: {}
     contact: {}
@@ -285,7 +285,7 @@ api-tryin: |-
     "entities" : [ {
       "entity" : {
         "type" : "Project",
-        "name" : "EnvoieCarte 4.1.0",
+        "name" : "WS_ENC_PIELYX_ADORIA_MANUAL_PRODUCT_SENDING 0.1.12",
         "description" : "An API for managing a list of tasks that need to be done",
         "importedFrom" : "b93b038d-3e5a-4d28-8608-a28df2c2a4da"
       },
@@ -447,12 +447,12 @@ api-tryin: |-
       } ]
     } ],
     "environments" : [ {
-      "name" : "EnvoieCarte 4.1.0",
+      "name" : "WS_ENC_PIELYX_ADORIA_MANUAL_PRODUCT_SENDING 0.1.12",
       "importedFrom" : {
         "projectId" : "b93b038d-3e5a-4d28-8608-a28df2c2a4da"
       },
       "variables" : {
-        "de7dfcae-ed9f-4da6-bc31-0f5a558901e3" : {
+        "81b1638b-8fd4-48e3-83d4-6863e54f93a2" : {
           "name" : "BaseUrl",
           "value" : "https://example.com",
           "enabled" : true,

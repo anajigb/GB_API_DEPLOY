@@ -2,8 +2,8 @@
   "swagger" : "2.0",
   "info" : {
     "description" : "An API for managing a list of tasks that need to be done",
-    "version" : "4.1.0",
-    "title" : "EnvoieCarte",
+    "version" : "0.1.12",
+    "title" : "WS_ENC_PIELYX_ADORIA_MANUAL_PRODUCT_SENDING",
     "termsOfService" : "",
     "contact" : { }
   },
