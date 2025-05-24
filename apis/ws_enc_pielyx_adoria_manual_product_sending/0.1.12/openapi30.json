@@ -87,7 +87,8 @@
         "example" : "47ee3550-b619-11e6-8408-0bdb025a7cfa"
       } ]
     },
-    "/tasks/Service/EnvoieCarte" : {
+    "/tasks/Service/EnvoieCarte" : { },
+    "/services/encaissement/EnvoiProduitV_2" : {
       "get" : {
         "summary" : "Load the list of Tasks",
         "parameters" : [ {
@@ -163,15 +164,6 @@
             "description" : "Site code"
           },
           "example" : "1,2,558"
-        }, {
-          "name" : "Key",
-          "in" : "header",
-          "required" : true,
-          "description" : "Key for authentification",
-          "schema" : {
-            "type" : "string",
-            "description" : "Key for authentification"
-          }
         } ],
         "responses" : {
           "200" : {
@@ -225,35 +217,6 @@
             }
           }
         }
-      },
-      "post" : {
-        "summary" : "Create a new task",
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "$ref" : "#/components/schemas/Task"
-              },
-              "example" : "{\n  \"name\": \"Feed the fish\",\n  \"completed\": false,\n  \"createdAt\": \"2016.07.03\"\n}"
-            }
-          }
-        },
-        "responses" : {
-          "200" : {
-            "description" : "Status 200",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/Task"
-                },
-                "example" : "{\n  \"id\": \"47ee3550-b619-11e6-8408-0bdb025a7cfa\",\n  \"name\": \"Feed the fish\",\n  \"completed\": false,\n  \"createdAt\": \"2016.07.03\"\n}"
-              }
-            }
-          }
-        },
-        "security" : [ {
-          "HTTP_BASIC" : [ ]
-        } ]
       }
     }
   },

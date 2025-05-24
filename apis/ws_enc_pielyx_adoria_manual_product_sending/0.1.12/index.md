@@ -19,6 +19,7 @@ api-definition:
     - "#/contract/types/46917aee-4a9d-4147-bdb4-2cb3bd741651"
     - "#/contract/types/20aff05a-1b52-4ff4-95b3-a7ed86274942"
     - "#/contract/resources/36866066-91a0-41c9-adab-9a1949d52bfa"
+    - "#/contract/resources/15afe480-4a46-42d3-a74b-142892047248"
     securitySchemes:
       e1536907-75a0-4f63-86fb-04c606e4f010:
         name: "HTTP_BASIC"
@@ -100,8 +101,10 @@ api-definition:
                 description: "Status 200"
       "36866066-91a0-41c9-adab-9a1949d52bfa":
         path: "/tasks/Service/EnvoieCarte"
+      "15afe480-4a46-42d3-a74b-142892047248":
+        path: "/services/encaissement/EnvoiProduitV_2"
         operations:
-          f3408586-74a7-4818-b197-8943a8fb9c97:
+          a30543c5-c6e1-4801-a734-01269081fbfd:
             name: "Load the list of Tasks"
             method: "GET"
             queryParameters:
@@ -148,11 +151,6 @@ api-definition:
               required: true
               examples:
               - value: "1,2,558"
-            headers:
-            - name: "Key"
-              type: "STRING"
-              description: "Key for authentification"
-              required: true
             responses:
               e79ed5a8-5fa9-4141-a158-4b48de28f480:
                 status: "200"
@@ -191,34 +189,6 @@ api-definition:
                 description: "Status 400"
                 bodies:
                 - type: "#/contract/types/20aff05a-1b52-4ff4-95b3-a7ed86274942"
-          e4b8314f-fb89-4c7f-8504-bae654358024:
-            name: "Create a new task"
-            method: "POST"
-            securedBy:
-            - scheme: "#/contract/securitySchemes/e1536907-75a0-4f63-86fb-04c606e4f010"
-            bodies:
-            - type: "#/contract/types/46917aee-4a9d-4147-bdb4-2cb3bd741651"
-              examples:
-              - value: |-
-                  {
-                    "name": "Feed the fish",
-                    "completed": false,
-                    "createdAt": "2016.07.03"
-                  }
-            responses:
-              f385b804-24ea-4d37-9760-f00df04595c6:
-                status: "200"
-                description: "Status 200"
-                bodies:
-                - type: "#/contract/types/46917aee-4a9d-4147-bdb4-2cb3bd741651"
-                  examples:
-                  - value: |-
-                      {
-                        "id": "47ee3550-b619-11e6-8408-0bdb025a7cfa",
-                        "name": "Feed the fish",
-                        "completed": false,
-                        "createdAt": "2016.07.03"
-                      }
     types:
       "46917aee-4a9d-4147-bdb4-2cb3bd741651":
         name: "Task"
@@ -357,11 +327,11 @@ api-tryin: |-
       }, {
         "entity" : {
           "type" : "Request",
-          "id" : "f3408586-74a7-4818-b197-8943a8fb9c97",
+          "id" : "a30543c5-c6e1-4801-a734-01269081fbfd",
           "name" : "Load the list of Tasks",
           "uri" : {
             "host" : "${\"BaseUrl\"}",
-            "path" : "/tasks/Service/EnvoieCarte",
+            "path" : "/services/encaissement/EnvoiProduitV_2",
             "query" : {
               "delimiter" : "&",
               "items" : [ {
@@ -405,44 +375,11 @@ api-tryin: |-
           },
           "headers" : [ {
             "enabled" : true,
-            "name" : "Key",
-            "value" : ""
-          }, {
-            "enabled" : true,
             "name" : "Accept",
             "value" : "application/json"
           } ],
           "headersType" : "Form",
           "uriEditor" : true
-        }
-      }, {
-        "entity" : {
-          "type" : "Request",
-          "id" : "e4b8314f-fb89-4c7f-8504-bae654358024",
-          "name" : "Create a new task",
-          "uri" : {
-            "host" : "${\"BaseUrl\"}",
-            "path" : "/tasks/Service/EnvoieCarte"
-          },
-          "method" : {
-            "link" : "",
-            "name" : "POST",
-            "requestBody" : true
-          },
-          "headers" : [ {
-            "enabled" : true,
-            "name" : "Content-Type",
-            "value" : "application/json"
-          }, {
-            "enabled" : true,
-            "name" : "Accept",
-            "value" : "application/json"
-          } ],
-          "headersType" : "Form",
-          "body" : {
-            "bodyType" : "Text",
-            "textBody" : "{\n  \"name\": \"Feed the fish\",\n  \"completed\": false,\n  \"createdAt\": \"2016.07.03\"\n}"
-          }
         }
       } ]
     } ],
@@ -452,7 +389,7 @@ api-tryin: |-
         "projectId" : "b93b038d-3e5a-4d28-8608-a28df2c2a4da"
       },
       "variables" : {
-        "81b1638b-8fd4-48e3-83d4-6863e54f93a2" : {
+        "555428e8-d679-4a78-93c5-9be456688f8a" : {
           "name" : "BaseUrl",
           "value" : "https://example.com",
           "enabled" : true,
